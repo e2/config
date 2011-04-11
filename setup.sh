@@ -12,7 +12,7 @@ mkdir -p "${workspace}"
 dotfiles="${workspace}/dotfiles"
 if [ ! -d "${dotfiles}" ]; then
   cd "${workspace}"
-  git clone github.com:e2/dotfiles
+  git clone https://github.com/e2/dotfiles.git
   cd -
 fi
 
