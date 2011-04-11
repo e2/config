@@ -16,8 +16,10 @@ set -eu
 
 . ./dot_route
 
+# Download/update repo
 workspace="$(dirname $0)/.."
 dotfiles="${workspace}/${DOTFILES_DIR}"
+
 if [ ! -d "${dotfiles}" ]; then
   cd "${workspace}"
   git clone ${DOTFILES_URL} "${DOTFILES_DIR}"
@@ -27,6 +29,7 @@ else
 fi
 cd -
 
+# Restore config files
 DST_PREFIX="${dotfiles}/${ROUTE_PREFIX}"
 check "${DST_PREFIX}" "${HOME}/.zshenv"
 check "${DST_PREFIX}" "${HOME}/.zshrc"
