@@ -10,12 +10,13 @@ workspace="${HOME}/workspace"
 mkdir -p "${workspace}"
 
 dotfiles="${workspace}/my_dotfiles"
-cd "${workspace}"
-  if [ ! -d "${dotfiles}" ]; then
-    git clone https://github.com/e2/my_dotfiles.git
-  else
-    git pull
-  fi
+if [ ! -d "${dotfiles}" ]; then
+  cd "${workspace}"
+  git clone https://github.com/e2/my_dotfiles.git
+else
+  cd "${dotfiles}"
+  git pull
+fi
 cd -
 
 DST_PREFIX="${dotfiles}/route_"
