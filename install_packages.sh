@@ -1,5 +1,8 @@
 #!/bin/sh
 
+set -e
+set -u
+
 install_packages()
 {
   here=$(dirname $0)
