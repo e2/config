@@ -1,2 +1,3 @@
 #!/bin/sh
-apt-get install $(< apt-list.txt)
+here=$(dirname $0)
+apt-get install $(< "${here}/apt-list.txt")
