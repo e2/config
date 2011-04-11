@@ -9,7 +9,7 @@ install_packages()
 setup_apt()
 {
   sources=/etc/apt/sources.list
-  universe=/etc/apt/sources.list.d/universe
+  universe=/etc/apt/sources.list.d/universe.list
   if ! grep universe "${sources}"; then
     if [ ! -e "${universe}" ]; then
       cat "${sources}" | sed -e 's/\(.*\) main$/\1 universe/g' > "${universe}"
