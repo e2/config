@@ -1,0 +1,4 @@
+git-core zsh-beta make vim-full rxvt-unicode exuberant-ctags feh fluxbox
+git-svn libgtest-dev libreadline5-dev libopenssl-ruby mlterm
+mlterm-tools ncftp tidy valgrind xclip cmake libxml2-dev libxml2
+libxslt-dev subversion wmtimer cscope
