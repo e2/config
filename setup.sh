@@ -22,6 +22,7 @@ cd -
 DST_PREFIX="${dotfiles}/route_"
 check "${DST_PREFIX}" "${HOME}/.zshenv"
 check "${DST_PREFIX}" "${HOME}/.zshrc"
+check "${DST_PREFIX}" "${HOME}/.zsh"
 check "${DST_PREFIX}" "${HOME}/.vimrc"
 
 # vi:fdm=marker:
