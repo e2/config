@@ -4,7 +4,7 @@ set -eu
 
 # make sure we are at home
 
-. dot_route
+. ./dot_route
 
 workspace="${HOME}/workspace"
 mkdir -p "${workspace}"
