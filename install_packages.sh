@@ -12,8 +12,7 @@ setup_apt()
   universe=/etc/apt/sources.d/universe
   if ! grep universe "${sources}"; then
     if [ ! -e "${universe}" ]; then
-      cat "${sources}" | sed -e 's/\(.*\) main$/\1 universe/g' >
-      "${universe}"
+      cat "${sources}" | sed -e 's/\(.*\) main$/\1 universe/g' > "${universe}"
       apt-get update
     fi
   fi
