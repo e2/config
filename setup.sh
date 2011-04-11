@@ -11,9 +11,9 @@ mkdir -p "${workspace}"
 
 dotfiles="${workspace}/dotfiles"
 if [ ! -d "${dotfiles}" ]; then
-  pushd "${workspace}"
+  cd "${workspace}"
   git clone github.com:e2/dotfiles
-  popd
+  cd -
 fi
 
 
