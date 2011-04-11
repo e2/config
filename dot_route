@@ -1,0 +1,51 @@
+#!/bin/sh
+# {{{ code
+# USAGE: check <dst_path> <item_path> <proc>
+check()
+{
+  base_prefix=${1:-}
+  item=${2:-}
+  process=${3:-}
+
+  [ -z "${base_prefix}" ] && die "Dest prefix is empty"
+  [ -z "$item" ] && die "No param given"
+  [ "$item" = "${base_prefix}" ] && die "Cannot include data subdir"
+  DST="${base_prefix}$(basename $item)"
+  mkdir -p "$(dirname ${DST})"
+  SRC="$item"
+  process="${3:-}"
+  #if special copy doesnt exist
+  if [ ! -f "${DST}" ] && [ ! -d "${DST}" ] ; then
+    #if original is still in home
+    if [ -f "${SRC}" ] || [ -d "${SRC}" ]; then
+      #make sure nothing is using the file/dir
+      [ -n "${process}" ] && pgrep -u ${USER} "${process}" && die "${process} is still running"
+      #move it
+      mv "${SRC}" "${DST}"
+      #link it
+      ln -s "${DST}" "${SRC}"
+      echo "MOVED: ${SRC} -> ${DST}"
+    fi
+  fi
+
+  # if the main copy is ok
+  if [ -f "${DST}" ] || [ -d "${DST}" ] ; then
+
+    # skip if already a symbolic link
+    if [ ! -h "${SRC}" ]; then
+
+      # if the file doesn't exist
+      if [ -f "${SRC}" ] || [ -d "${SRC}" ]; then
+        echo "ERROR: ${SRC} IS NOT A LINK TO ${DST}!"
+      else
+        #restore the link
+        ln -s "${DST}" "${SRC}"
+        echo "RESTORED: ${SRC} -> ${DST}"
+      fi
+    fi
+  else
+    echo "warning: skipped: ${SRC} ($DST does not exist)"
+  fi
+}
+# }}} code
+# vi:fdm=marker:ft=sh:
