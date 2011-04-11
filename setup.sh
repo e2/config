@@ -10,12 +10,13 @@ workspace="${HOME}/workspace"
 mkdir -p "${workspace}"
 
 dotfiles="${workspace}/dotfiles"
-if [ ! -d "${dotfiles}" ]; then
-  cd "${workspace}"
-  git clone https://github.com/e2/dotfiles.git
-  cd -
-fi
-
+cd "${workspace}"
+  if [ ! -d "${dotfiles}" ]; then
+    git clone https://github.com/e2/dotfiles.git
+  else
+    git pull
+  fi
+cd -
 
 DST_PREFIX="${dotfiles}/route_"
 check "${DST_PREFIX}" "${HOME}/.zshenv"
