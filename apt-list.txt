@@ -1,4 +1,27 @@
-git-core zsh-beta make vim-gnome rxvt-unicode exuberant-ctags feh fluxbox
-git-svn libgtest-dev libreadline5-dev libruby mlterm
-mlterm-tools ncftp tidy valgrind xclip cmake libxml2-dev libxml2
-libxslt-dev subversion wmtimer cscope
+cmake
+cscope
+exuberant-ctags
+feh
+fluxbox
+git-core
+git-doc
+git-svn
+libgtest-dev
+libreadline5-dev
+libruby
+libxml2
+libxml2-dev
+libxslt-dev
+make
+mlterm
+mlterm-tools
+ncftp
+rxvt-unicode
+subversion
+tidy
+valgrind
+vim-gnome
+wmtimer
+xclip
+zsh-beta
+vim
