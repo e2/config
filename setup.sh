@@ -49,6 +49,28 @@ restore_dotfiles()
   check "${DST_PREFIX}" "${HOME}/.gitconfig"
 }
 
+setup_vim()
+{
+  url=https://github.com/tpope/vim-pathogen
+
+  vim_dir="${HOME}/.vim"
+  if [ ! -e "${vim_dir}" ]; then
+    mkdir -p "${vim_dir}"
+  fi
+
+  pushd "${vim_dir}"
+
+  if [ ! -e "vim-pathogen/.git" ]; then
+    git clone $url
+  fi
+
+  mkdir -p "bundle"
+  mkdir -p "autoload"
+  ln -s ../vim-pathogen/autoload/pathogen.vim autoload/
+
+  popd
+}
+
 #}}}
 
 # URL to your dotfiles repo
@@ -70,5 +92,7 @@ dotfiles="${workspace}/${DOTFILES_DIR}"
 
 setup_latest_dotfiles
 restore_dotfiles
+
+setup_vim
 
 # vi:fdm=marker:
