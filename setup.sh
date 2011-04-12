@@ -88,7 +88,7 @@ setup_vim()
   [ -e vim-cucumber ] || git clone git://github.com/tpope/vim-cucumber.git
   [ -e vim-unimpaired ] || git clone git://github.com/tpope/vim-unimpaired.git
   [ -e vim-haml ] || git clone git://github.com/tpope/vim-haml.git
-  [ -e vim-vimoutliner ] || git://github.com/e2/vim-vimoutliner.git
+  [ -e vim-vimoutliner ] || git clone git://github.com/e2/vim-vimoutliner.git
   popd
 
   popd
