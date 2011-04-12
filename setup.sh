@@ -12,7 +12,7 @@ get_ruby()
 
 get_rake()
 {
-  get_ruby()
+  get_ruby
 }
 
 setup_latest_dotfiles()
