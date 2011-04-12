@@ -3,7 +3,7 @@
 get_ruby()
 {
   if [ ! -d "~/.rvm" ]; then
-    bash -c '"bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)"'
+    bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
     rvm install 1.9.2-head
     rvm use --default 1.9.2-head
     rvm use 1.9.2-head
