@@ -66,7 +66,10 @@ setup_vim()
 
   mkdir -p "bundle"
   mkdir -p "autoload"
-  ln -s ../vim-pathogen/autoload/pathogen.vim autoload/
+
+  if [ ! -h autoload/pathogen.vim ]; then
+    ln -s ../vim-pathogen/autoload/pathogen.vim autoload/
+  fi
 
   popd
 }
