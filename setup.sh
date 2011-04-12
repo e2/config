@@ -2,20 +2,27 @@
 # {{{ Functions
 get_ruby()
 {
-  RUBY_VERSION=ruby-1.9.2-head
-
   if [ ! -d "${HOME}/.rvm" ]; then
     bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
   fi
 
   source "${HOME}"/.rvm/scripts/rvm
 
-  if ! rvm list | grep $RUBY_VERSION; then
-    rvm install $RUBY_VERSION
+  ruby_version=ruby-1.9.2-head
+  if ! rvm list | grep $ruby_version; then
+
+    # Base ruby is required to build 1.9.2
+    base_ruby=ruby-1.8.2
+    if ! rvm list | grep $base_ruby; then
+      rvm install $base_ruby -C --disable-install-doc
+    fi
+    rvm use $base_ruby
+
+    rvm install $ruby_version -C --disable-install-doc
   fi
 
-  rvm use --default $RUBY_VERSION
-  rvm use $RUBY_VERSION
+  rvm use --default $ruby_version
+  rvm use $ruby_version
 }
 
 get_rake()
