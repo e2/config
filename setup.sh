@@ -8,11 +8,12 @@ get_ruby()
     bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
   fi
 
+  source "${HOME}"/.rvm/scripts/rvm
+
   if ! rvm list | grep $RUBY_VERSION; then
     rvm install $RUBY_VERSION
   fi
 
-  source "${HOME}"/.rvm/scripts/rvm
   rvm use --default $RUBY_VERSION
   rvm use $RUBY_VERSION
 }
