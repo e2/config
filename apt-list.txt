@@ -1,12 +1,12 @@
 cmake
 autoconf
+bison
 cscope
 exuberant-ctags
 feh
 fluxbox
 git-core
-git-doc
-git-svn
+git-doc git-svn
 libgtest-dev
 libreadline5-dev
 libruby
