@@ -12,7 +12,7 @@ get_ruby()
   if ! rvm list | grep $ruby_version; then
 
     # Base ruby is required to build 1.9.2
-    base_ruby=ruby-1.8.2
+    base_ruby=ruby-1.8.7
     if ! rvm list | grep $base_ruby; then
       rvm install $base_ruby -C --disable-install-doc
     fi
