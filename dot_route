@@ -42,6 +42,8 @@ check()
         ln -s "${DST}" "${SRC}"
         echo "RESTORED: ${SRC} -> ${DST}"
       fi
+    elif [ ! "${SRC}" -ef "${DST}" ]; then
+      echo "ERROR: link points elsewhere: ${SRC} --> $(realpath ${SRC}) -x-> ${DST}"
     fi
   else
     echo "warning: skipped: ${SRC} ($DST does not exist)"
