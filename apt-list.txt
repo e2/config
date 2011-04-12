@@ -1,4 +1,5 @@
 cmake
+autoconf
 cscope
 exuberant-ctags
 feh
