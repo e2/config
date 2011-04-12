@@ -71,12 +71,25 @@ setup_vim()
     git clone $url
   fi
 
-  mkdir -p "bundle"
   mkdir -p "autoload"
 
   if [ ! -h autoload/pathogen.vim ]; then
     ln -s ../vim-pathogen/autoload/pathogen.vim autoload/
   fi
+
+  mkdir -p "bundle"
+  pushd bundle
+  [ -e vim-fugitive ] || git clone git://github.com/tpope/vim-fugitive.git
+  [ -e vim-endwise ] || git clone git://github.com/tpope/vim-endwise.git
+  [ -e vim-rails ] || git clone git://github.com/tpope/vim-rails.git
+  [ -e vim-ruby ] || git clone git://github.com/vim-ruby/vim-ruby.git
+  [ -e vim-surround ] || git clone git://github.com/tpope/vim-surround.git
+  [ -e nerdcommenter ] || git clone git://github.com/scrooloose/nerdcommenter.git
+  [ -e vim-cucumber ] || git clone git://github.com/tpope/vim-cucumber.git
+  [ -e vim-unimpaired ] || git clone git://github.com/tpope/vim-unimpaired.git
+  [ -e vim-haml ] || git clone git://github.com/tpope/vim-haml.git
+  [ -e vim-vimoutliner ] || git://github.com/e2/vim-vimoutliner.git
+  popd
 
   popd
 }
