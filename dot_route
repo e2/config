@@ -10,7 +10,7 @@ check()
   [ -z "${base_prefix}" ] && die "Dest prefix is empty"
   [ -z "$item" ] && die "No param given"
   [ "$item" = "${base_prefix}" ] && die "Cannot include data subdir"
-  DST="${base_prefix}$(basename $item)"
+  DST=$(realpath "${base_prefix}$(basename $item)")
   mkdir -p "$(dirname ${DST})"
   SRC="$item"
   process="${3:-}"
