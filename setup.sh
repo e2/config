@@ -2,12 +2,19 @@
 # {{{ Functions
 get_ruby()
 {
-  if [ ! -d "~/.rvm" ]; then
+  RUBY_VERSION=ruby-1.9.2-head
+
+  if [ ! -d "${HOME}/.rvm" ]; then
     bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
-    rvm install 1.9.2-head
-    rvm use --default 1.9.2-head
-    rvm use 1.9.2-head
   fi
+
+  if ! rvm list | grep $RUBY_VERSION; then
+    rvm install $RUBY_VERSION
+  fi
+
+  source "${HOME}"/.rvm/scripts/rvm
+  rvm use --default $RUBY_VERSION
+  rvm use $RUBY_VERSION
 }
 
 get_rake()
