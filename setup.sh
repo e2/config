@@ -27,6 +27,8 @@ else
   cd "${dotfiles}"
   git pull
 fi
+# generate files
+rake
 cd -
 
 # Restore config files
@@ -35,5 +37,6 @@ check "${DST_PREFIX}" "${HOME}/.zshenv"
 check "${DST_PREFIX}" "${HOME}/.zshrc"
 check "${DST_PREFIX}" "${HOME}/.zsh"
 check "${DST_PREFIX}" "${HOME}/.vimrc"
+check "${DST_PREFIX}" "${HOME}/.gitconfig"
 
 # vi:fdm=marker:
