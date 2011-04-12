@@ -46,7 +46,14 @@ check()
       echo "ERROR: link points elsewhere: ${SRC} --> $(realpath ${SRC}) -x-> ${DST}"
     fi
   else
-    echo "warning: skipped: ${SRC} ($DST does not exist)"
+    echo "warning: skipped: ${SRC} (does not exist)"
+  fi
+}
+
+check_if_exists()
+{
+  if [ -e "$2" ]; then
+    check "$@"
   fi
 }
 # }}} code
