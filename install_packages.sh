@@ -6,7 +6,7 @@ set -u
 install_packages()
 {
   here=$(dirname $0)
-  apt-get install $(cat "${here}/apt-list.txt" )
+  apt-get -y install $(cat "${here}/apt-list.txt" )
 }
 
 setup_apt()
