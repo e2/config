@@ -29,3 +29,5 @@ zsh-beta
 vim
 procps
 realpath
+man-db
+screen
