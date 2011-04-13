@@ -90,6 +90,9 @@ setup_vim()
   [ -e vim-haml ] || git clone git://github.com/tpope/vim-haml.git
   [ -e vim-vimoutliner ] || git clone git://github.com/e2/vim-vimoutliner.git
   popd
+  [ -d plugin ] || mkdir -p plugin
+
+  [ -e plugin/a.vim ] || wget -c -O plugin/a.vim 'http://www.vim.org/scripts/download_script.php?src_id=7218'
 
   popd
 }
