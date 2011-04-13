@@ -21,5 +21,9 @@ setup_apt()
   fi
 }
 
+#TODO: put this somewhere else?
+LOCALE=en_US.utf8 ja_JP.utf8 pl_PL.utf8
+
+setup_locale $LOCALE
 setup_apt
 install_packages
