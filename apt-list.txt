@@ -31,3 +31,4 @@ procps
 realpath
 man-db
 screen
+strace
