@@ -33,3 +33,4 @@ realpath
 man-db
 screen
 strace
+ack-grep
