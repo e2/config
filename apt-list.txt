@@ -9,6 +9,7 @@ git-core
 git-doc
 git-svn
 libgtest-dev
+google-mock
 libreadline5-dev
 libruby
 libxml2
