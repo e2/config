@@ -1,4 +1,5 @@
 cmake
+curl
 autoconf
 bison
 cscope
@@ -34,3 +35,8 @@ man-db
 screen
 strace
 ack-grep
+detox
+aptitude
+astyle
+tofrodos
+universalindentgui
