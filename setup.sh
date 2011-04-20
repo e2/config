@@ -55,6 +55,7 @@ restore_dotfiles()
   check "${DST_PREFIX}" "${HOME}/.vimrc"
   check "${DST_PREFIX}" "${HOME}/.gitconfig"
   check "${DST_PREFIX}" "${HOME}/.gitignore"
+  check "${DST_PREFIX}" "${HOME}/.uncrustify.cfg"
 }
 
 setup_vim()
